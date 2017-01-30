@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rol</title>
+	<script type="text/javascript" src="javascripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	    var p=document.getElementsByName("p");
+        window.onload=function(){
+            console.log("hola");
+    		
+    		$.ajax({
+				url: "/rol",
+				type: "GET",
+				success: function (data, status, jqXHR) {
+					console.log("Local success callback: "+data[1].name);
+					p[0].innerHTML=data[0].id+" "+data[0].name;
+					p[1].innerHTML=data[1].id+" "+data[1].name;
+					p[2].innerHTML=data[2].id+" "+data[2].name;
+				},
+				error: function (jqXHR, status, err) {
+					console.log("Local error callback: "+err);
+				},
+				complete: function (jqXHR, status) {
+					console.log("Local completion callback.");
+				}
+			});
+		}
+		
+	</script>
+</head>
+<body>
+     
+     <p name="p">hola</p>
+     <p name="p">hola</p>
+     <p name="p">hola</p>
+
+</body>
+</html>

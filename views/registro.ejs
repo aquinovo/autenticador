@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Registro</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="estilos/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css"></link>
+    <script type="text/javascript" src="javascripts/registro.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-3.1.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/perfil.png">
+      <form >
+        <div class="form-input">
+          <input type="text" name="datos" placeholder="Nombres">
+        </div>
+        <div class="form-input">
+          <input type="text" name="datos" placeholder="Apellidos">
+        </div>
+        <div class="form-input" id="eml">
+          <input type="email" name="datos" autocomplete="off" placeholder="ej. micorreo@gmail.com">
+        </div>
+        <div class="form-input">
+          <input type="password" name="datos" placeholder="Contraseña">
+        </div>
+        <input type="button" name="datos" value="REGISTRAR" class="btn-login" onclick="comprobar()">
+      </form>
+    </div>
+  </body>
+</html>

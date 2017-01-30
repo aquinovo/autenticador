@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Administrador</title>
+	<link rel="stylesheet" href="estilos/estilos.css">
+	<!--para agregar el icono de la utm en la pestaña-->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css"></link>
+	<script type="text/javascript" src="javascripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="javascripts/roles.js"></script>
+    <!link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<script type="text/javascript">
+
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+    function changeColor(x){
+    	if(x.style.background=="rgb(213,217,198)"){
+    		x.style.background="#fff";
+    	}
+    	else{
+    		x.style.background="#d5d9c6";
+    	}
+    	return false;
+    }
+/*
+document.getElementById("yourFormId").submit();
+
+document.getElementById("yourLinkId").onclick = function() {
+    document.getElementById("yourFormId").submit();
+}
+*/
+    </script>
+</head>
+<body>
+
+	<div id="titulo">
+		<p id="nombre">Roles</p>
+	</div>
+<!--menu de navegacion-->
+	<nav>
+		<div class="contenedor" id="uno">
+			<a class="sindeco" href="/uiuser">
+			<img class="icon" src="images/usuarios.png">
+			<p class="texto">usuarios</p>
+		</a>
+		</div>
+		<div class="contenedor" id="dos">
+			<a class="sindeco" href="/uirol">
+			<img class="icon" src="images/roles.png">
+			<p class="texto">roles</p>
+		</a>
+		</div>
+		<div class="contenedor" id="tres">
+			<a class="sindeco" href="/uiservice">
+			<img class="icon" src="images/aservice.png">
+			<p class="texto">servicios</p>
+		</a>
+		</div>
+
+		<div class="contenedor" id="cuatro">
+			<a class="sindeco" href="/uiaservice">
+			<img class="icon" src="images/service.png">
+			<p class="texto">servicios a</p>
+		</a>
+		</div>
+	</nav>
+  <!--fin del menu de navegacion-->
+
+  <div class="contenedor2 flotar" id="imprimir">
+    <!--<a href="#" class="info">
+    <div class="div-info">
+      <ul class="lista">
+        <li class="info">aquí se mostraran datos para roles</li>
+      </ul>
+    </div>
+    </a>
+
+    <a href="#" class="info">
+    <div class="div-info">
+      <ul class="lista">
+        <li class="info">esta es la tabla para roles</li>
+      </ul>
+    </div>
+    </a>-->
+  </div>
+
+  <div class="contenedor3 flotar">
+    <input id="eliminar" type="submit" name="eliminar" value="ELIMINAR" class="btn-rolE flotar2">
+    <input id="modificar" type="button" name="modificar" value="MODIFICAR" class="btn-roles flotar2">
+    <input href="javascript:void(0)" onclick="toggle_visibility('popup-box1');" type="button" name="crear" value="CREAR" class="btn-roles flotar2">
+  </div>
+
+	<div id="popup-box1" class="posicion-popup">
+      <div id="envoltura">
+        <p class="boton-x"><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');" class="boton-x">X</a></p>
+
+				<div id="contenedor-popup">
+					<div class="contenedor-inputs">
+					<strong><p class="texto-crear-usuario">Crear Rol</p></strong><br>
+					<div class="form-input">
+						<input type="text" name="datos" placeholder="Nombre">
+					</div><!--find del form1-->
+
+					<div class="form-input">
+						<input type="text" name="datos" placeholder="Código">
+					</div><!--fin del form2-->
+				</div><!--fin del contenedor de los inputs-->
+					<p><a href="javascript:void(0)" onclick="crear();" onclick="toggle_visibility('popup-box1');" onclick="this.form.submit()" class="btn-crear">Guardar</a></p>
+					<p><a href="javascript:void(0)" onclick="toggle_visibility('popup-box1');" class="btn-crear">Cancelar</a></p>
+
+        </div><!--popup container end-->
+      </div><!--popup wrapper popup end-->
+    </div><!--popup box 1 end-->
+
+		<div id="popup-box2" class="posicion-popup">
+				<div id="envoltura">
+					<p class="boton-x"><a href="javascript:void(0)" onclick="location.reload();" class="boton-x">X</a></p>
+
+					<div id="contenedor-popup">
+						<div class="contenedor-inputs">
+						<strong><p class="texto-crear-usuario">Modificar Rol</p></strong><br>
+						<div class="form-input">
+							<input type="text" name="mostrardatos" placeholder="Nombre">
+						</div><!--find del form1-->
+
+						<div class="form-input">
+							<input type="text" name="mostrardatos" placeholder="Código">
+						</div><!--fin del form2-->
+					</div><!--fin del contenedor de los inputs-->
+						<p><a id="renovar" href="javascript:void(0)" class="btn-crear">Guardar</a></p>
+						<p><a href="javascript:void(0)" onclick="location.reload();" class="btn-crear">Cancelar</a></p>
+
+					</div><!--popup container end-->
+				</div><!--popup wrapper popup end-->
+			</div><!--popup box 2 end-->
+
+</body>
+</html>
