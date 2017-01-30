@@ -6,10 +6,10 @@ function Connection() {
   this.init = function() {
     this.pool = mysql.createPool({
       connectionLimit: 10,
-      host: 'localhost',
-      user: 'root',
+      host: 'mysql.hostinger.mx',
+      user: 'u113757698_root',
       password: 'velasco',
-      database: 'autenticador_db'
+      database: 'u113757698_bd'
     });
   };
  
